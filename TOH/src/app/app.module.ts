@@ -13,27 +13,25 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeroesComponent,
-        HeroDetailComponent,
-        MessagesComponent,
-        DashboardComponent,
-        HeroSearchComponent,
-
-    ],
     imports: [
-        BrowserModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-    ],
-    providers: [
-    // no need to place any providers due to the `providedIn` flag...
-    ],
-    bootstrap: [ AppComponent ]
-})
-export class AppModule { }
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+
     HttpClientInMemoryWebApiModule.forRoot(
     InMemoryDataService, { dataEncapsulation: false }
-)
+    )
+    ],
+    declarations: [
+    AppComponent,
+    DashboardComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent,
+    HeroSearchComponent
+    ],
+    bootstrap: [ AppComponent ]
+    })
+
+    export class AppModule { }
